@@ -1,0 +1,66 @@
+author = "Fuiba";
+
+// Overview:
+overviewText = "PMC Versus investigates an unknown contact near FOB Aurum.";
+overviewPicture = "overview_09.paa"; // Mission screenshot
+
+// Loading:
+onLoadName = "Terriculi"; // Mission name
+onLoadMission = "Investigate the unknown contact.";
+loadScreen = "versuslogo.paa"; // Loading screen pip
+
+doneKeys[] = {"co10_pmcvcro09"};
+
+minScore=0;
+avgScore=1000;
+maxScore=14000;
+
+class CfgWorlds
+{
+		// Loading texts displayed on the bottom of the loading screen (picked randomly)
+		loadingTexts[]=
+		{
+			"PMC Versus was founded in 1997.",
+			"Stratis is of volcanic origin, with many rocks and crevices and Versus."
+		};
+};
+
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 10;
+};
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "PMC Versus defended FOB Aurum against the British special forces and neutralized the temporary base and officers. Now it's time to find an opening and get off this island. The NATO presence combined with the AAF forces is too much to deal with.";
+	};
+};
+
+// Available at startup:
+class CfgWeapons 
+{
+	class hgun_mas_mak_F	{count = 2;};
+};
+	
+class CfgMagazines 
+{
+	class 8Rnd_mas_9x18_Mag		{count = 8;};
+
+};
+
+//--------------------------------------------------------------
+//------------------------AIS INJURY----------------------------
+//--------------------------------------------------------------
+class RscTitles {
+	#include "ais_injury\dialogs\rscTitlesAIS.hpp"
+};
+class CfgFunctions {
+	#include "ais_injury\cfgFunctionsAIS.hpp"
+};
+//--------------------------------------------------------------
